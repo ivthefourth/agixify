@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BoardTitle from './components/BoardTitle';
+import FreeForm from './components/FreeForm';
+import Story from './components/Story';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <BoardTitle />
+        <div className="free-form-fields">
+          <FreeForm /> <FreeForm /> <FreeForm />
+        </div>
+        <div>
+          <Story />
+        </div>
+        <div>
+          <Story />
+        </div>
       </div>
     );
   }
