@@ -36,11 +36,6 @@ class ReduxActions extends Component {
       console.log(store.getState())
     )
 
-    store.dispatch({ type: 'CREATE', item: {text:'hello'} });
-    store.dispatch({ type: 'CREATE', item: {text:'wow pow zim zam'} });
-    store.dispatch({ type: 'CREATE', item: {text:'woo redux is cool!'} })
-
-    window.store = store;
 
     function deleteItem(id) {
       return {
@@ -58,11 +53,6 @@ class ReduxActions extends Component {
     }
 
 
-    componentWillReceiveProps(nextProps){
-      //console.log('receive props');
-      //only if next props are diff, need to add if statement... maybe need should component update? 
-      this.setState({text: nextProps.text});
-    }
 
     handleChange(event) {
       //console.log('handleChange')
