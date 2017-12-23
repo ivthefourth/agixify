@@ -8,6 +8,7 @@ const CREATE_TASK = 'CREATE_TASK';
 // const TASK_TEXT_EDITED = 'TASK_TEXT_EDITED';
 // const CHANGE_TASK_STATUS = 'CHANGE_TASK_STATUS';
 // const TASK_STATUS_CHANGED = 'TASK_STATUS_CHANGED';
+const EDIT_BOARD_TITLE = 'EDIT_BOARD_TITLE';
 
 
 // function mapActionTypes(typeMap) {
@@ -45,7 +46,7 @@ function singleMessageEpic(socket, types) {
 export default function(socket) {
    return combineEpics(
       //liveEditEpic(socket, {[CREATE_TASK]: TASK_WAS_CREATED}),
-      throttledEpic(socket, [EDIT_TASK_TEXT]),
+      throttledEpic(socket, [EDIT_TASK_TEXT, EDIT_BOARD_TITLE]),
       singleMessageEpic(socket, [DELETE_TASK, CREATE_TASK])
    )
 }
