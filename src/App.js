@@ -3,7 +3,7 @@ import './App.css';
 import Story from './components/Story';
 import BoardContainer from './containers/BoardContainer';
 import FreeFormContainer from './containers/FreeFormContainer';
-import { FreeFormText, ACText, FirstCol} from './data/Redux';
+//import { FreeFormText, ACText, FirstCol} from './data/Redux';
 
 
 

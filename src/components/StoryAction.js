@@ -32,7 +32,6 @@ class StoryAction extends Component {
 	          	onClick={this.handleClick} />
 
 		      <Menu id="story-status"
-		      	anchorEl={this.state.anchorEl}
 		      	open={this.state.open}
 		      	onClose={this.handleClose} >
 

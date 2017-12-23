@@ -1,10 +1,7 @@
 
 import React, { Component } from 'react';
-import {CardActions} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+//import {CardActions} from 'material-ui/Card';
+//import FlatButton from 'material-ui/FlatButton';
 import StoryAction from './StoryAction';
 import StoryCol1 from './StoryCol1';
 import StoryStatusCol from './StoryStatusCol';
@@ -14,10 +11,9 @@ import CreateButton from './CreateButton';
 class Story extends Component {
   render() {
     return(
- <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
    <div className="storyBoard">
 
-    <div className="StoryTitle" contenteditable="true">Some title </div> 
+    <input className="StoryTitle" placeholder="Some title" />
       <StoryAction />
 
     {/* beginnging of storybaord*/}
@@ -31,9 +27,8 @@ class Story extends Component {
         </div>
       </div>
       <CreateButton />
-
-  </div>   {/* end of storyBoard */}
-  </MuiThemeProvider>
+   {/* end of storyBoard */}
+  </div>
 )}};
 
 export default Story;

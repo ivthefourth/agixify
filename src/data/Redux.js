@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {createStore} from 'redux';
-import { Provider, connect } from 'react-redux';
+//import React, { Component } from 'react';
+//import {createStore} from 'redux';
+//import { Provider, connect } from 'react-redux';
 
 //reducer
 export function Board(state = {title: "Some Title"}, action){
