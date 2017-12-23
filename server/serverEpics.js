@@ -1,5 +1,7 @@
 const { combineEpics } = require('redux-observable');
 
+const EDIT_BOARD_TITLE = 'EDIT_BOARD_TITLE';
+const BOARD_TITLE_EDITED = 'BOARD_TITLE_EDITED';
 const CREATE_TASK = 'CREATE_TASK';
 const TASK_CREATED = 'TASK_CREATED';
 const DELETE_TASK = 'DELETE_TASK';
@@ -47,7 +49,7 @@ function singleMessageEpic(io, typeMap) {
 
 module.exports = function(socket) {
    return combineEpics(
-      liveEditEpic(socket, {[EDIT_TASK_TEXT]: TASK_TEXT_EDITED}),
+      liveEditEpic(socket, {[EDIT_TASK_TEXT]: TASK_TEXT_EDITED, [EDIT_BOARD_TITLE]: BOARD_TITLE_EDITED}),
       singleMessageEpic(socket, {[DELETE_TASK]: TASK_DELETED, [CREATE_TASK]: TASK_CREATED})
    )
 }

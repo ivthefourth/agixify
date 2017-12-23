@@ -22,7 +22,7 @@ class BoardTitle extends Component {
               <div style={divStyle}>
                 <span className="titleText" > 
                     <input type="text" value={this.props.title} 
-                      onBlur={(e) => {e.preventDefault(); 
+                      onChange={(e) => {e.preventDefault(); 
                       this.props.modifyText(e.target.value); console.log("Hey it worked");}}  />
                 </span>
 
