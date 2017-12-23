@@ -9,13 +9,13 @@ let divStyle = {
   textAlign: 'center'
 };
 
-class BoardTitle extends Component {
+class Storytitle extends Component {
 
   render() {
     console.log(this.props);
 
     return (
-      <div className="boardTitle">
+      <div className="Storytitle">
 
           <div className="cursor: pointer">
             <div className="container-for-span">
@@ -38,5 +38,4 @@ class BoardTitle extends Component {
   }
 }
 
-export default BoardTitle;
-
+export default Storytitle;

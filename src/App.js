@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import BoardTitle from './components/BoardTitle';
-import FreeForm from './components/FreeForm';
 import Story from './components/Story';
+import BoardContainer from './containers/BoardContainer';
+import FreeFormContainer from './containers/FreeFormContainer';
+import { FreeFormText, ACText, FirstCol} from './data/Redux';
+
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <BoardTitle />
+        <BoardContainer />
         <div className="free-form-fields">
-          <FreeForm /> <FreeForm /> <FreeForm />
+          <FreeFormContainer /> <FreeFormContainer /> <FreeFormContainer />
         </div>
+
+{/*<-- Story goes here -->*/}
         <div>
-          <Story />
+          <Story /> {/* pass properties to story here from redux */}
         </div>
         <div>
           <Story />

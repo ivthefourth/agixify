@@ -8,7 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import StoryAction from './StoryAction';
 import StoryCol1 from './StoryCol1';
 import StoryStatusCol from './StoryStatusCol';
-import AcceptancCriteria from './AcceptancCriteria';
+import AcceptancCriteria from './AcceptanceCriteria';
 import CreateButton from './CreateButton';
 
 class Story extends Component {
@@ -32,7 +32,7 @@ class Story extends Component {
       </div>
       <CreateButton />
 
-  </div>   {/* end of .storyBoard */}
+  </div>   {/* end of storyBoard */}
   </MuiThemeProvider>
 )}};
 

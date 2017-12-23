@@ -1,12 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import { Board, FreeFormText, ACText, FirstCol} from './data/Redux';
+
+// var reducers;
+
+// reducers = combineReducers({
+// 	boardStore: Board,
+// 	acStore: ACText,
+// 	firstColStore: FirstCol
+// })
+
 
  ReactDOM.render((
-	<Router>
-		<Route path="/" component={App} />
-	</Router>), document.getElementById('root'));  
+	<Provider store={window.store=createStore(Board)}>
+		<App />
+	</Provider>), document.getElementById('root'));  
 
-{/*  ReactDOM.render(<App />, document.getElementById('root'));  */}
