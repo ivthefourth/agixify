@@ -63,7 +63,7 @@ function singleMessageEpic(io, typeMap) {
       action$.ofType(...Object.keys(typeMap))
          .map(mapActionTypes(typeMap))
          .do(action => emitWithoutSocket(action, io, false))
-         .ignoreElements()
+         //.ignoreElements()
 }
 
 
@@ -73,7 +73,6 @@ module.exports = function(socket) {
          [EDIT_BOARD_TITLE]: BOARD_TITLE_EDITED,
          [EDIT_BOARD_FREE_TEXT]: BOARD_FREE_TEXT_EDITED,
          [EDIT_STORY_TITLE]: STORY_TITLE_EDITED,
-         [CHANGE_STORY_STATUS]: STORY_STATUS_CHANGED,
          [EDIT_STORY_ACCEPTANCE_CRITERIA]: STORY_ACCEPTANCE_CRITERIA_EDITED,
          [EDIT_TASK_TEXT]: TASK_TEXT_EDITED,
       }),
@@ -86,6 +85,7 @@ module.exports = function(socket) {
          [MOVE_STORY_UP]: STORY_MOVED_UP,
          [MOVE_STORY_DOWN]: STORY_MOVED_DOWN,
          [EDIT_STORY_POINTS]: STORY_POINTS_EDITED,
+         [CHANGE_STORY_STATUS]: STORY_STATUS_CHANGED,
       })
    )
 }
