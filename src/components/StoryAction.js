@@ -14,11 +14,11 @@ class StoryAction extends Component {
 
    handleClick = (event) => {
   	console.log("this is clicked");
-    this.setState({ open: true, anchorEl: event.currentTarget });
+    this.setState({ open: true });
   };
 
    handleClose = () => {
-   	console.log("this is closed")
+   	console.log("this is closed");
     this.setState({ open: false });
   };
 
