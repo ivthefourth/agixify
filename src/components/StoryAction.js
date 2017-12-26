@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import Popover from 'material-ui/Popover';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import '../App.css';
 
@@ -7,8 +8,7 @@ class StoryAction extends Component {
 	constructor (props) {
 		super(props);
 		this.state = {
-			open: false,
-			anchorEl: null
+			open: false
 		}
 	}
 
@@ -24,22 +24,24 @@ class StoryAction extends Component {
 
 	render() {
 		return(
-	      <div className="StoryActions">
+			<div className="story-status">
+		      <RaisedButton label="Story Status..."
+		      className="StoryActions" onClick={this.handleClick} />
 
-	          <FlatButton label="Set Status..." 
-	          	aria-owns={this.state.open ? "story-status" : null}
-	          	aria-haspopup="true"
-	          	onClick={this.handleClick} />
+			  <Popover
+		        label="Set Status..." 
+	          	open={this.state.open }
+	          	anchorEl={this.state.anchorEl}
+	          	anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+		        targetOrigin={{horizontal: 'left', vertical: 'top'}}
+		        onRequestClose={this.handleClose} >
 
-		      <Menu id="story-status"
-		      	open={this.state.open}
-		      	onClose={this.handleClose} >
-
-		      	<MenuItem onClick={this.handleClose}>Completed</MenuItem>
-		      	<MenuItem onClick={this.handleClose}>In Jeopardy</MenuItem>
-		      	<MenuItem onClick={this.handleClose}>Failed</MenuItem>
-		      	</Menu>
-	      </div>
+		      <Menu class="story-status-menu"/>
+		      	<MenuItem primaryText="Completed" />
+		      	<MenuItem primaryText="In Jeopardy"/>
+		      	<MenuItem primaryText="Failed"/>
+		      </Popover>
+		     </div>
  		)
 	}
 };
