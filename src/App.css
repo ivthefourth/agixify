@@ -54,10 +54,17 @@ textarea {
 
 .story-status, .story-move-up, .story-move-down {
   float: left;
+  align-content: center;
 }
 
 hr {
   background-color: #00f;
   height: 2px;
   
+}
+
+.StoryActions {
+  width: 100%;
+  float: left;
+  padding-left: 35%;
 }

@@ -13,6 +13,7 @@ class StoryActions extends Component {
 				<StoryMoveUp />
 				<StoryMoveDown />
 				<StoryDelete />
+      <p />
 			</div>
 		)
 	}
