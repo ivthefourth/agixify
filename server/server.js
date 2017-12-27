@@ -16,7 +16,11 @@ const store = createStore(
 );
 
 
+const INIT_STATE = 'INIT_STATE';
+
+
 io.on('connection', function(socket){
+   socket.emit('message', {type: INIT_STATE, state: store.getState()})
    socket.on('message', function(msg){
       console.log(msg);
       msg.socket = socket;

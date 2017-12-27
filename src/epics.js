@@ -1,14 +1,21 @@
 import { combineEpics } from 'redux-observable';
 
-const CREATE_TASK = 'CREATE_TASK';
-//const TASK_WAS_CREATED = 'TASK_WAS_CREATED';
- const DELETE_TASK = 'DELETE_TASK';
-// const TASK_WAS_DELETED = 'TASK_WAS_DELETED';
- const EDIT_TASK_TEXT = 'EDIT_TASK_TEXT';
-// const TASK_TEXT_EDITED = 'TASK_TEXT_EDITED';
-// const CHANGE_TASK_STATUS = 'CHANGE_TASK_STATUS';
-// const TASK_STATUS_CHANGED = 'TASK_STATUS_CHANGED';
 const EDIT_BOARD_TITLE = 'EDIT_BOARD_TITLE';
+const EDIT_BOARD_FREE_TEXT = 'EDIT_BOARD_FREE_TEXT';
+
+const EDIT_STORY_TITLE = 'EDIT_STORY_TITLE';
+const EDIT_STORY_POINTS = 'EDIT_STORY_POINTS';
+const CHANGE_STORY_STATUS = 'CHANGE_STORY_STATUS';
+const EDIT_STORY_ACCEPTANCE_CRITERIA = 'EDIT_STORY_ACCEPTANCE_CRITERIA';
+const CREATE_STORY = 'CREATE_STORY';
+const DELETE_STORY = 'DELETE_STORY';
+const MOVE_STORY_UP = 'MOVE_STORY_UP';
+const MOVE_STORY_DOWN = 'MOVE_STORY_DOWN';
+
+const CREATE_TASK = 'CREATE_TASK';
+const DELETE_TASK = 'DELETE_TASK';
+const EDIT_TASK_TEXT = 'EDIT_TASK_TEXT';
+const CHANGE_TASK_STATUS = 'CHANGE_TASK_STATUS';
 
 
 // function mapActionTypes(typeMap) {
@@ -45,8 +52,23 @@ function singleMessageEpic(socket, types) {
 
 export default function(socket) {
    return combineEpics(
-      //liveEditEpic(socket, {[CREATE_TASK]: TASK_WAS_CREATED}),
-      throttledEpic(socket, [EDIT_TASK_TEXT, EDIT_BOARD_TITLE]),
-      singleMessageEpic(socket, [DELETE_TASK, CREATE_TASK])
+      throttledEpic(socket, [
+         EDIT_BOARD_TITLE,
+         EDIT_BOARD_FREE_TEXT,
+         EDIT_STORY_TITLE,
+         CHANGE_STORY_STATUS,
+         EDIT_STORY_ACCEPTANCE_CRITERIA,
+         EDIT_TASK_TEXT,
+      ]),
+      singleMessageEpic(socket, [
+         CREATE_STORY,
+         DELETE_STORY,
+         CHANGE_TASK_STATUS,
+         CREATE_TASK,
+         DELETE_TASK,
+         MOVE_STORY_UP,
+         MOVE_STORY_DOWN,
+         EDIT_STORY_POINTS,
+      ]),
    )
 }
