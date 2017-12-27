@@ -12,10 +12,9 @@ let divStyle = {
 class BoardTitle extends Component {
 
   render() {
-    console.log(this.props);
 
     return (
-      <div className="boardTitle">
+      <div className="BoardTitle">
 
           <div className="cursor: pointer">
             <div className="container-for-span">
@@ -23,7 +22,7 @@ class BoardTitle extends Component {
                 <span className="titleText" > 
                     <input type="text" value={this.props.title} 
                       onChange={(e) => {e.preventDefault(); 
-                      this.props.modifyText(e.target.value); console.log("Hey it worked");}}  />
+                      this.props.modifyText(e.target.value); }}  />
                 </span>
 
               </div>

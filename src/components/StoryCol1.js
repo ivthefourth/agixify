@@ -4,9 +4,9 @@ import '../App.css';
 class StoryCol1 extends Component { 
 	render() {
 		return(
-  <div className="StoryCol1 col-sm-1 flex-box" value={this.props.colOne}
-
-      />
+  <div className="StoryCol1 col-sm-1 flex-box" value={this.props.colOne}>
+      This is the 1st column
+      </div>
   )}
 };
 

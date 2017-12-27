@@ -1,20 +1,19 @@
 
 import React, { Component } from 'react';
-//import {CardActions} from 'material-ui/Card';
-//import FlatButton from 'material-ui/FlatButton';
-import StoryAction from './StoryAction';
 import StoryCol1 from './StoryCol1';
 import StoryStatusCol from './StoryStatusCol';
-import AcceptancCriteria from './AcceptanceCriteria';
-import CreateButton from './CreateButton';
+import AcceptanceCriteria from './AcceptanceCriteria';
+import CreateStory from './CreateStory';
+import StoryActions from './StoryActions';
 
 class Story extends Component {
   render() {
     return(
    <div className="storyBoard">
 
-    <input className="StoryTitle" placeholder="Some title" />
-      <StoryAction />
+      <CreateStory />
+      <input className="StoryTitle" placeholder="Some title" />
+      <StoryActions />
 
     {/* beginnging of storybaord*/}
       <div className="container-fluid">
@@ -23,10 +22,10 @@ class Story extends Component {
           <StoryStatusCol className="ToDo"/>
           <StoryStatusCol className="InProgress"/>
           <StoryStatusCol className="Done"/>
-          <AcceptancCriteria className="AcceptancCriteria"/>
+          <AcceptanceCriteria className="AcceptanceCriteria"/>
         </div>
       </div>
-      <CreateButton />
+      <hr />
    {/* end of storyBoard */}
   </div>
 )}};

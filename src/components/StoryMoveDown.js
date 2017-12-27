@@ -5,14 +5,25 @@ import '../App.css';
 // We need a function that will do read from an array? that will re-order the 
 // story by moving it -1 position
 
-const MoveStoryDown = () => (
-      <div className="MoveStoryDown">
+class MoveStoryDown extends Component {
+	constructor (props) {
+		super(props)
+		this.state = {
+			move_down: true
+		}
+	}
 
-          <FlatButton label="Move Down" value={this.props.moveUp} 
-          		onClick={e => e.preventDefault();
-                this.props.MoveStoryDown(e.target.value); console.log("Hey it worked");}} />
+	render() {
+ 		return(
+	      	<div className="story-move-down">
 
-      </div>
- );
+		        <FlatButton label="Move Down" value={this.props.move_down} 
+		          	onClick={(e) => {e.preventDefault();
+		            this.props.MoveStoryDown(e.target.value); console.log("Hey it worked");}} />
+
+		      </div>
+ 		)
+	}
+};
 
 export default MoveStoryDown;

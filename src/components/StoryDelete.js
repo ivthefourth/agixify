@@ -4,14 +4,25 @@ import '../App.css';
 
 // Need a function that will perform a delete from an array
 
-const StoryDelete = () => (
-      <div className="StoryDelete">
+class StoryDelete extends Component { 
+	constructor (props) {
+		super(props);
+		this.state = {
+			delete_story: true
+		}
+	}
 
-          <FlatButton label="Delete Story" value={this.props.delete_story}
-          			onClick={(e) => {e.preventDefault(); 
-                    this.props.deleteStory(e.target.value); />
+	render() {
+		return(
+		    <div className="story-move-up">
 
-      </div>
- );
+		        <FlatButton label="Delete Story" value={this.props.delete_story}
+		          	onClick={(e) => {e.preventDefault(); 
+		            this.props.deleteStory(e.target.value);}} />
+
+		    </div>
+ 		)
+ 	}
+};
 
 export default StoryDelete;
