@@ -6,7 +6,7 @@ class StoryStatusCol extends Component {
     return (
       <div className="StoryStatusCol col-sm-2 flex-box">
 
-      	This is the status columns
+      	This is the status column
 
        </div> 
 

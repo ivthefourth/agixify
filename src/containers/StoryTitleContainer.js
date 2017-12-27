@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StoryTitle from '../components/StoryTitle';
 
 const StoryTitleContainer = connect(
-  (state) => ({stitle: state.stitle}),
+  (state) => ({title: state.stories.title}),
   (dispatch) => ({
-    modifyText: title => dispatch(modifyText(stitle))
+    modifyStoryTitle: title => dispatch(modifyStoryTitle(title))
   })
 )(StoryTitle);
 
-function modifyText(newTitle) {
-  return {type: 'EDIT_TITLE', new_stitle: newSTitle };
+function modifyStoryTitle(newTitle) {
+  return {type: 'EDIT_STORY_TITLE', newTitle: newTitle };
 }
 
 export default StoryTitleContainer;

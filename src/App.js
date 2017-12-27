@@ -3,8 +3,7 @@ import './App.css';
 import Story from './components/Story';
 import BoardContainer from './containers/BoardContainer';
 import FreeFormContainer from './containers/FreeFormContainer';
-//import { FreeFormText, ACText, FirstCol} from './data/Redux';
-
+import CreateStory from './components/CreateStory';
 
 
 class App extends Component {
@@ -15,6 +14,8 @@ class App extends Component {
         <div className="free-form-fields">
           <FreeFormContainer /> <FreeFormContainer /> <FreeFormContainer />
         </div>
+
+      <CreateStory />
 
 {/*<-- Story goes here -->*/}
         <div>
