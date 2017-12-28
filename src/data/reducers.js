@@ -64,7 +64,7 @@ const reducers = combineReducers({
       }
    }, action) => {
       switch (action.type) {
-         case STORY_CREATED:{
+         case STORY_CREATED: {
             return {...state, [action.story.id]: action.story};
          }
          case STORY_DELETED: {
@@ -112,12 +112,29 @@ const reducers = combineReducers({
    },
    tasks: (state = {
       'task1': {
+         id: 'task1',
          storyId: 'story1',
          status: 'To Do',
          text: '',
       }
    }, action) => {
       switch (action.type) {
+         case TASK_CREATED: {
+            return {...state, [action.task.id]: action.task};
+         }
+         case TASK_DELETED: {
+            const {[action.id]: taskToRemove, ...tasksToKeep} = state;
+            return tasksToKeep;
+         }
+         case EDIT_TASK_TEXT:
+         case TASK_TEXT_EDITED: {
+            const editedTask = {...state[action.id], text: action.newText};
+            return {...state, [action.id]: editedTask};
+         }
+         case TASK_STATUS_CHANGED: {
+            const editedTask = {...state[action.id], status: action.newStatus};
+            return {...state, [action.id]: editedTask};
+         }
          default: {
             return state
          }
