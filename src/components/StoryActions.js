@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import StoryStatus from './StoryStatus';
-import StoryDelete from './StoryDelete';
-import StoryMoveUp from './StoryMoveUp';
-import StoryMoveDown from './StoryMoveDown';
+import StoryStatusContainer from '../containers/StoryStatusContainer';
+import StoryDeleteContainer from '../containers/StoryDeleteContainer';
+import StoryMoveUpContainer from '../containers/StoryMoveUpContainer';
+import StoryMoveDownContainer from '../containers/StoryMoveDownContainer';
 
 class StoryActions extends Component {
 
 	render() {
 		return(
 			<div className="StoryActions">
-				<StoryStatus />
-				<StoryMoveUp />
-				<StoryMoveDown />
-				<StoryDelete />
+				<StoryStatusContainer />
+				<StoryMoveUpContainer />
+				<StoryMoveDownContainer />
+				<StoryDeleteContainer />
 			</div>
 		)
 	}

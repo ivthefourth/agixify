@@ -3,7 +3,7 @@ import './App.css';
 import Story from './components/Story';
 import BoardContainer from './containers/BoardContainer';
 import FreeFormContainer from './containers/FreeFormContainer';
-import CreateStory from './components/CreateStory';
+import CreateStoryContainer from './containers/CreateStoryContainer';
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
           <FreeFormContainer /> <FreeFormContainer /> <FreeFormContainer />
         </div>
 
-      <CreateStory />
+        <CreateStoryContainer />
 
 {/*<-- Story goes here -->*/}
         <div>
@@ -25,8 +25,8 @@ class App extends Component {
           <Story />
         </div>
       </div>
-    );
+    )
   }
-}
+};
 
 export default App;

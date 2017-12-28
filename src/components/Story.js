@@ -2,31 +2,33 @@
 import React, { Component } from 'react';
 import StoryCol1 from './StoryCol1';
 import StoryStatusCol from './StoryStatusCol';
-import AcceptanceCriteria from './AcceptanceCriteria';
+import AccCriteriaContainer from '../containers/AccCriteriaContainer';
 import StoryActions from './StoryActions';
-import StoryTitle from './StoryTitle';
+import StoryTitleContainer from '../containers/StoryTitleContainer';
 
 class Story extends Component {
   render() {
-    return(
-   <div className="storyBoard">
+    return (
+     <div className="storyBoard">
 
-      <StoryTitle  />
-      <StoryActions />
+        <StoryTitleContainer  />
+        <StoryActions />
 
-    {/* beginnging of storybaord*/}
-      <div className="container-fluid">
-        <div className="row content">
-          <StoryCol1 />
-          <StoryStatusCol className="ToDo"/>
-          <StoryStatusCol className="InProgress"/>
-          <StoryStatusCol className="Done"/>
-          <AcceptanceCriteria className="AcceptanceCriteria"/>
+      {/* beginnging of storybaord*/}
+        <div className="container-fluid">
+          <div className="row content">
+            <StoryCol1 />
+            <StoryStatusCol className="ToDo"/>
+            <StoryStatusCol className="InProgress"/>
+            <StoryStatusCol className="Done"/>
+            <AccCriteriaContainer className="AcceptanceCriteria"/>
+          </div>
         </div>
-      </div>
-      <hr />
-   {/* end of storyBoard */}
-  </div>
-)}};
+        <hr />
+      {/* end of storyBoard */}
+    </div>
+    )
+  }
+};
 
 export default Story;
