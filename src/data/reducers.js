@@ -61,6 +61,14 @@ const reducers = combineReducers({
          points: 5,
          status: null,
          acceptanceCriteria: 'whole project done'
+      },
+      'story2': {
+         id: 'story2',
+         title: 'Story Title',
+         number: 1,
+         points: 5,
+         status: null,
+         acceptanceCriteria: 'whole project done'
       }
    }, action) => {
       switch (action.type) {
@@ -115,7 +123,19 @@ const reducers = combineReducers({
          id: 'task1',
          storyId: 'story1',
          status: 'To Do',
-         text: '',
+         text: 'one',
+      }, 
+      'task2': {
+         id: 'task2',
+         storyId: 'story1',
+         status: 'To Do',
+         text: 'zwei',
+      }, 
+      'task3': {
+         id: 'task3',
+         storyId: 'story2',
+         status: 'To Do',
+         text: 'trois',
       }
    }, action) => {
       switch (action.type) {

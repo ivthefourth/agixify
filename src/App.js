@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Story from './components/Story';
+//import Story from './components/Story';
 import BoardContainer from './containers/BoardContainer';
 import FreeFormContainer from './containers/FreeFormContainer';
 import CreateStoryContainer from './containers/CreateStoryContainer';
+import StoriesContainer from './containers/StoriesContainer';
 
 
 class App extends Component {
@@ -17,13 +18,17 @@ class App extends Component {
 
         <CreateStoryContainer />
 
-{/*<-- Story goes here -->*/}
+        <StoriesContainer />
+{/*<-- Story goes here --> */}
+
         <div>
-          <Story /> {/* pass properties to story here from redux */}
+          <Story /> 
         </div>
         <div>
           <Story />
         </div>
+
+
       </div>
     )
   }
