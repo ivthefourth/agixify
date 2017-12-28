@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Story from './components/Story';
+//import Story from './components/Story';
 import BoardContainer from './containers/BoardContainer';
 import FreeFormContainer from './containers/FreeFormContainer';
 //import { FreeFormText, ACText, FirstCol} from './data/Redux';
+import StoriesContainer from './containers/StoriesContainer';
 
 
 
@@ -15,14 +16,16 @@ class App extends Component {
         <div className="free-form-fields">
           <FreeFormContainer /> <FreeFormContainer /> <FreeFormContainer />
         </div>
-
-{/*<-- Story goes here -->*/}
+        <StoriesContainer />
+{/*<-- Story goes here -->
         <div>
-          <Story /> {/* pass properties to story here from redux */}
+          <Story /> 
         </div>
         <div>
           <Story />
         </div>
+*/}
+
       </div>
     );
   }
