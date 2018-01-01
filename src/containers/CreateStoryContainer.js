@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import CreateStory from '../components/CreateStory';
 
+let id="newStory"
+
 const CreateStoryContainer = connect(
-  (state) => ({}),
+  (state) => ({id: id}),
   (dispatch) => ({
-    addStory: id => dispatch(addStory(id))
+    addStory: (id) => dispatch(addStory(id))
   })
 )(CreateStory);
 

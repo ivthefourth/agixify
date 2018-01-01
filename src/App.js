@@ -18,7 +18,7 @@ class App extends Component {
           <FreeFormContainer  />  */}
         </div>
 
-        <CreateStoryContainer />
+        <CreateStoryContainer id="newStory" />
 
         <StoriesContainer />
 

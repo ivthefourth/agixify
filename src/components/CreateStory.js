@@ -18,6 +18,7 @@ const CreateStory = () => (
 		<IconButton className="story-button"
 			style={styles.large}  iconStyle={styles.largeIcon}
 		    tooltip="Add New Story"	    tooltipPosition="top-right"
+		    id="newStory"
 		    onChange={(e) => {e.preventDefault();
 		    this.props.addStory(this.props.id); }}  >
       		<AddCircle />
