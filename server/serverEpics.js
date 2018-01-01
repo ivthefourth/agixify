@@ -59,7 +59,6 @@ function liveEditEpic(io, typeMap) {
          .flatMap(action => orm(action))
          .ignoreElements()
          .catch(err => (console.log(err), err))
-         //maybe send an error action to user
          .ignoreElements()
 }
 
