@@ -5,10 +5,15 @@ class FreeForm extends Component {
 	render() {
 	return(
 	  <div className="TextField">
-	  	 {this.props.freeTextAreas.map((newTextAreas, index) => (
-	  	 	<textarea key={index}
-	    	onChange={(e) => {e.preventDefault(); 
-	    	this.props.modifyText(e.target.value, index); }} />)) }
+	  	 {this.props.freeTextAreas.map((newTextAreas, index) => {
+	  	 	return <textarea key={index}
+	    		value={newTextAreas}
+	    		onChange={(e) => {
+		  	 		e.preventDefault(); 
+		    		this.props.modifyFreeText(e.target.value, index)
+		    	}} 
+	    	/>
+	  	})}
 	  </div>
 	  )
 	}
