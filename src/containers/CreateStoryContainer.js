@@ -11,7 +11,8 @@ const CreateStoryContainer = connect(
 )(CreateStory);
 
 function addStory(id) {
-  return {type: 'CREATE_STORY', id: id };
+  return {type: 'CREATE_STORY', 
+  		  story: {title: 'Story Title' }};
 }
 
 export default CreateStoryContainer;

@@ -27,7 +27,7 @@ class StoryTitle extends Component {
               <span className="story-text" style={spanStyle}> 
                   <input style={inputStyle} value={this.props.title} 
                     onChange={(e) => {e.preventDefault(); 
-                    this.props.modifyStoryTitle(e.target.value); }}  />
+                    this.props.modifyStoryTitle(e.target.value, this.props.id); }}  />
               </span>
 
             </div>

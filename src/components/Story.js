@@ -15,7 +15,7 @@ class Story extends Component {
     return (
      <div className="storyMain">
         <div className="story-heading">
-          <StoryTitleContainer  title={this.props.story_title} />
+          <StoryTitleContainer  title={this.props.story_title} id={this.props.id} />
           <StoryActions id={this.props.id}/>
         </div>
 
