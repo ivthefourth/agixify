@@ -145,14 +145,14 @@ module.exports.ohAreEm = (action) => {
          promise = db.stories.findOne({_id: mongo.ObjectId(action.id)})
             .then(story => {
                return db.stories.remove({_id: mongo.ObjectId(action.id)})
-               .then(db.stories.update({
+               .then(() => db.stories.update({
                   number: {$gt: story.number}
                }, {
                   $inc: {number: -1}
                }, {
                   multi: true
                }))
-               .then(db.tasks.remove({storyId: action.id}));
+               .then(() => db.tasks.remove({storyId: action.id}));
             });
          break;
       }
@@ -163,7 +163,7 @@ module.exports.ohAreEm = (action) => {
             }, {
                $inc: {number: 1}
             }))
-            .then(db.stories.update({
+            .then(() => db.stories.update({
                _id: mongo.ObjectId(action.id)
             }, {
                $inc: {number: -1}
