@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import StoryTitle from '../components/StoryTitle';
 
 const StoryTitleContainer = connect(
-  (state) => ({title: state.stories.title}),
+  (state) => ({}),
   (dispatch) => ({
     modifyStoryTitle: title => dispatch(modifyStoryTitle(title))
   })

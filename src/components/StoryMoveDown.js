@@ -8,9 +8,9 @@ class MoveStoryDown extends Component {
  		return(
 	      	<div className="story-move-down">
 
-		        <FlatButton label="Move Down" value={this.props.number} 
+		        <FlatButton label="Move Down" 
 		          	onClick={(e) => {e.preventDefault();
-		            this.props.MoveStoryDown(e.target.value); console.log("Hey it worked");}} />
+		            this.props.moveStoryDown(this.props.id); }} />
 
 		    </div>
  		)

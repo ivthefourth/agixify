@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import StoryDelete from '../components/StoryDelete';
 
 const StoryDeleteContainer = connect(
-  (state) => ({id: state.stories.id}),
+  (state) => ({}),
   (dispatch) => ({
-    storyDelete: id => dispatch(storyDelete(id))
+    deleteStory: id => dispatch(deleteStory(id))
   })
 )(StoryDelete);
 
-function storyDelete(number) {
-  return {type: 'STORY_DELETED', story: number };
+function deleteStory(id) {
+  return {type: 'DELETE_STORY', id: id };
 }
 
 export default StoryDeleteContainer;

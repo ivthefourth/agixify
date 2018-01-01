@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import StoryMoveDown from '../components/StoryMoveDown';
 
 const StoryMoveDownContainer = connect(
-  (state) => ({id: state.stories.id}),
+  (state) => ({}),
   (dispatch) => ({
     moveStoryDown: id => dispatch(moveStoryDown(id))
   })
 )(StoryMoveDown);
 
-function moveStoryDown(number) {
-  return {type: 'STORY_MOVED_DOWN', story: number };
+function moveStoryDown(id) {
+  return {type: 'MOVE_STORY_DOWN', id: id };
 }
 
 export default StoryMoveDownContainer;

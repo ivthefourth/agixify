@@ -13,21 +13,14 @@ class App extends Component {
       <div className="App">
         <BoardContainer />
         <div className="free-form-fields">
-          <FreeFormContainer /> <FreeFormContainer /> <FreeFormContainer />
+          <FreeFormContainer  /> 
+  {/*}        <FreeFormContainer  />
+          <FreeFormContainer  />  */}
         </div>
 
         <CreateStoryContainer />
 
         <StoriesContainer />
-{/*<-- Story goes here --> */}
-
-        <div>
-          <Story /> 
-        </div>
-        <div>
-          <Story />
-        </div>
-
 
       </div>
     )

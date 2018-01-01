@@ -18,7 +18,6 @@ let spanStyle = {
 class StoryTitle extends Component {
 
   render() {
-    console.log(this.props);
 
     return (
       <div className="StoryTitle">
@@ -26,9 +25,9 @@ class StoryTitle extends Component {
           <div className="cursor: pointer">
             <div className="container-for-span">
               <span className="story-text" style={spanStyle}> 
-                  <input placeholder="Some title" style={inputStyle} value={this.props.title} 
+                  <input style={inputStyle} value={this.props.title} 
                     onChange={(e) => {e.preventDefault(); 
-                    this.props.modifyStoryTitle(e.target.value); console.log("Hey it worked");}}  />
+                    this.props.modifyStoryTitle(e.target.value); }}  />
               </span>
 
             </div>

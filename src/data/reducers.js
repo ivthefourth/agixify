@@ -33,7 +33,7 @@ function findIndex(object, callback) {
 const reducers = combineReducers({
    board: (state = {
       title: 'Board Title',
-      freeTextAreas: ['Free Text','Free Text','Free Text'],
+      freeTextAreas: ['Free Text 1','Free Text 2','Free Text 3'],
       columns: ['To Do', 'In Progress', 'Done'],
    }, action) => {
       switch (action.type) {
@@ -56,7 +56,7 @@ const reducers = combineReducers({
    stories: (state = {
       'story1': {
          id: 'story1',
-         title: 'Story Title',
+         title: 'Story 1 Title',
          number: 1,
          points: 5,
          status: null,
@@ -64,9 +64,9 @@ const reducers = combineReducers({
       },
       'story2': {
          id: 'story2',
-         title: 'Story Title',
-         number: 1,
-         points: 5,
+         title: 'Story 2 Title',
+         number: 2,
+         points: 8,
          status: null,
          acceptanceCriteria: 'whole project done'
       }

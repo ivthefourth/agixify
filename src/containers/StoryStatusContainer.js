@@ -2,14 +2,16 @@ import { connect } from 'react-redux';
 import StoryStatus from '../components/StoryStatus';
 
 const StoryStatusContainer = connect(
-  (state) => ({colOne: state.colOne}),
+  (state) => ({}),
   (dispatch) => ({
-    updateCol: colOne => dispatch(updateCol(colOne))
+    updateCol: (status,id) => dispatch(updateCol(status, id))
   })
 )(StoryStatus);
 
-function updateCol(new_state) {
-  return {type: 'STORY_STATUS_CHANGED', new_state: new_state };
+function updateCol(newStatus, id) {
+  return {type: 'CHANGE_STORY_STATUS', 
+  			newStatus: newStatus,
+  			id: id };
 }
 
 export default StoryStatusContainer;
