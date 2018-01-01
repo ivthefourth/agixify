@@ -57,6 +57,7 @@ export default function(socket) {
          EDIT_BOARD_FREE_TEXT,
          EDIT_STORY_TITLE,
          CHANGE_STORY_STATUS,
+         EDIT_STORY_POINTS,
          EDIT_STORY_ACCEPTANCE_CRITERIA,
          EDIT_TASK_TEXT,
       ]),
@@ -68,7 +69,6 @@ export default function(socket) {
          DELETE_TASK,
          MOVE_STORY_UP,
          MOVE_STORY_DOWN,
-         EDIT_STORY_POINTS,
       ]),
    )
 }

@@ -1,4 +1,5 @@
 const { combineEpics } = require('redux-observable');
+const {ohAreEm: orm} = require('./mongo.js');
 
 const EDIT_BOARD_TITLE = 'EDIT_BOARD_TITLE';
 const BOARD_TITLE_EDITED = 'BOARD_TITLE_EDITED';
@@ -54,6 +55,11 @@ function liveEditEpic(io, typeMap) {
       action$.ofType(...Object.keys(typeMap))
          .map(mapActionTypes(typeMap))
          .do(action => emitWithoutSocket(action, io, true))
+         .debounceTime(6000)
+         .flatMap(action => orm(action))
+         .ignoreElements()
+         .catch(err => (console.log(err), err))
+         //maybe send an error action to user
          .ignoreElements()
 }
 
@@ -61,9 +67,10 @@ function liveEditEpic(io, typeMap) {
 function singleMessageEpic(io, typeMap) {
    return action$ =>
       action$.ofType(...Object.keys(typeMap))
+         .flatMap(action => orm(action))
          .map(mapActionTypes(typeMap))
          .do(action => emitWithoutSocket(action, io, false))
-         //.ignoreElements()
+         //maybe send an error action to user
 }
 
 
@@ -73,6 +80,7 @@ module.exports = function(socket) {
          [EDIT_BOARD_TITLE]: BOARD_TITLE_EDITED,
          [EDIT_BOARD_FREE_TEXT]: BOARD_FREE_TEXT_EDITED,
          [EDIT_STORY_TITLE]: STORY_TITLE_EDITED,
+         [EDIT_STORY_POINTS]: STORY_POINTS_EDITED,
          [EDIT_STORY_ACCEPTANCE_CRITERIA]: STORY_ACCEPTANCE_CRITERIA_EDITED,
          [EDIT_TASK_TEXT]: TASK_TEXT_EDITED,
       }),
@@ -84,7 +92,6 @@ module.exports = function(socket) {
          [DELETE_TASK]: TASK_DELETED,
          [MOVE_STORY_UP]: STORY_MOVED_UP,
          [MOVE_STORY_DOWN]: STORY_MOVED_DOWN,
-         [EDIT_STORY_POINTS]: STORY_POINTS_EDITED,
          [CHANGE_STORY_STATUS]: STORY_STATUS_CHANGED,
       })
    )
