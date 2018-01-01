@@ -4,12 +4,12 @@ import FreeForm from '../components/FreeForm';
 const FreeFormContainer = connect(
   (state) => ({freeTextAreas: state.board.freeTextAreas}),
   (dispatch) => ({
-    modifyFreeText: freeTextAreas => dispatch(modifyFreeText(freeTextAreas))
+    modifyFreeText: (text, index) => dispatch(modifyFreeText(text, index))
   })
 )(FreeForm);
 
-function modifyFreeText(newTextAreas, index) {
-  return {type: 'EDIT_BOARD_FREE_TEXT', newTextAreas: [index]};
+function modifyFreeText(text, index) {
+  return {type: 'EDIT_BOARD_FREE_TEXT',text , index};
 }
 
 export default FreeFormContainer;

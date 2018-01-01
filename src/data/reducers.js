@@ -6,6 +6,7 @@ const BOARD_FREE_TEXT_EDITED = 'BOARD_FREE_TEXT_EDITED';
 
 const EDIT_STORY_TITLE = 'EDIT_STORY_TITLE';
 const STORY_TITLE_EDITED = 'STORY_TITLE_EDITED';
+const EDIT_STORY_POINTS = 'EDIT_STORY_POINTS';
 const STORY_POINTS_EDITED = 'STORY_POINTS_EDITED';
 const STORY_STATUS_CHANGED = 'STORY_STATUS_CHANGED';
 const EDIT_STORY_ACCEPTANCE_CRITERIA = 'EDIT_STORY_ACCEPTANCE_CRITERIA';
@@ -33,7 +34,7 @@ function findIndex(object, callback) {
 const reducers = combineReducers({
    board: (state = {
       title: 'Board Title',
-      freeTextAreas: ['Free Text 1','Free Text 2','Free Text 3'],
+      freeTextAreas: ['Free Text','Free Text','Free Text'],
       columns: ['To Do', 'In Progress', 'Done'],
    }, action) => {
       switch (action.type) {
@@ -54,22 +55,30 @@ const reducers = combineReducers({
       }
    },
    stories: (state = {
-      'story1': {
-         id: 'story1',
-         title: 'Story 1 Title',
-         number: 1,
-         points: 5,
-         status: null,
-         acceptanceCriteria: 'whole project done'
-      },
-      'story2': {
-         id: 'story2',
-         title: 'Story 2 Title',
-         number: 2,
-         points: 8,
-         status: null,
-         acceptanceCriteria: 'whole project done'
-      }
+      // 'story1': {
+      //    id: 'story1',
+      //    title: 'Story 1 Title',
+      //    number: 1,
+      //    points: 5,
+      //    status: null,
+      //    acceptanceCriteria: 'whole project done'
+      // },
+      // 'story2': {
+      //    id: 'story2',
+      //    title: 'Story 2 Title',
+      //    number: 2,
+      //    points: 5,
+      //    status: null,
+      //    acceptanceCriteria: 'whole project done'
+      // },
+      // 'story3': {
+      //    id: 'story3',
+      //    title: 'Story 3 Title',
+      //    number: 3,
+      //    points: 5,
+      //    status: null,
+      //    acceptanceCriteria: 'whole project done'
+      // }
    }, action) => {
       switch (action.type) {
          case STORY_CREATED: {
@@ -77,8 +86,14 @@ const reducers = combineReducers({
          }
          case STORY_DELETED: {
             const {[action.id]: storyToRemove, ...storiesToKeep} = state;
-            //need to change story numbers!
-            return storiesToKeep;
+            const removedNumber = storyToRemove.number;
+            return Object.entries(storiesToKeep).reduce((acc, story) => {
+               acc[story[0]] = {
+                  ...story[1],
+                  number: story[1].number > removedNumber ? story[1].number - 1 : story[1].number
+               };
+               return acc;
+            }, {});
          }
          case STORY_MOVED_UP: {
             const idA = action.id;
@@ -99,7 +114,7 @@ const reducers = combineReducers({
             const editedStory = {...state[action.id], title: action.newTitle};
             return {...state, [action.id]: editedStory};
          }
-         //?case EDIT_STORY_POINTS:
+         case EDIT_STORY_POINTS:
          case STORY_POINTS_EDITED: {
             const editedStory = {...state[action.id], points: action.newPoints};
             return {...state, [action.id]: editedStory};
@@ -119,28 +134,35 @@ const reducers = combineReducers({
       }
    },
    tasks: (state = {
-      'task1': {
-         id: 'task1',
-         storyId: 'story1',
-         status: 'To Do',
-         text: 'one',
-      }, 
-      'task2': {
-         id: 'task2',
-         storyId: 'story1',
-         status: 'To Do',
-         text: 'zwei',
-      }, 
-      'task3': {
-         id: 'task3',
-         storyId: 'story2',
-         status: 'To Do',
-         text: 'trois',
-      }
+      // 'task1': {
+      //    id: 'task1',
+      //    storyId: 'story1',
+      //    status: 'To Do',
+      //    text: 'one',
+      // }, 
+      // 'task2': {
+      //    id: 'task2',
+      //    storyId: 'story1',
+      //    status: 'To Do',
+      //    text: 'zwei',
+      // }, 
+      // 'task3': {
+      //    id: 'task3',
+      //    storyId: 'story2',
+      //    status: 'To Do',
+      //    text: 'trois',
+      // }
    }, action) => {
       switch (action.type) {
          case TASK_CREATED: {
             return {...state, [action.task.id]: action.task};
+         }
+         case STORY_DELETED:{
+            return Object.entries(state).filter(task => task[1].storyId !== action.id)
+               .reduce((acc, task) => {
+                  acc[task[0]] = task[1];
+                  return acc; 
+               }, {})
          }
          case TASK_DELETED: {
             const {[action.id]: taskToRemove, ...tasksToKeep} = state;
