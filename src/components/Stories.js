@@ -11,7 +11,7 @@ class Stories extends Component {
         number={story_object.number}
       	status={story_object.status} 
         points={story_object.points}
-
+        ac={story_object.acceptanceCriteria}
         tasks={story_object.tasks} />)}
 
 
