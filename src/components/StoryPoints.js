@@ -10,7 +10,6 @@ let pointsBox = {
 class StoryPoints extends Component {
 
 	render() {
-		console.log("points is", this.props.points);
 
 	return(
 	  <div className="StoryPoints">

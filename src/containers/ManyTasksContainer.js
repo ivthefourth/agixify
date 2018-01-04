@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import ManyFreeForms from '../components/ManyFreeForms';
+import ManyTasks from '../components/ManyTasks';
 
-const FreeFormContainer = connect(
+const ManyTasksContainer = connect(
   (state) => ({freeTextAreas: state.board.freeTextAreas}),
   (dispatch) => ({
     modifyFreeText: freeTextAreas => dispatch(modifyFreeText(freeTextAreas))
@@ -12,4 +12,4 @@ function modifyFreeText(newTextAreas, index) {
   return {type: 'EDIT_BOARD_FREE_TEXT', freeTextAreas: newTextAreas[index] };
 }
 
-export default FreeFormContainer;
+export default ManyTasksContainer;

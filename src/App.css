@@ -77,3 +77,14 @@ hr {
 .story-text {
   text-align: center;
 }
+
+.task {
+  width: 90px;
+  height: 90px;
+  float: left;
+}
+
+.task-text {
+  border-width: 1px;
+
+}

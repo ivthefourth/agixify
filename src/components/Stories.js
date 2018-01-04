@@ -10,7 +10,11 @@ class Stories extends Component {
       	story_title={story_object.title}
         number={story_object.number}
       	status={story_object.status} 
-        points={story_object.points} />)}
+        points={story_object.points}
+
+        tasks={story_object.tasks} />)}
+
+
   {/*   <pre>{JSON.stringify(this.props.stories, null, 2)}</pre> */}
       
       </div>

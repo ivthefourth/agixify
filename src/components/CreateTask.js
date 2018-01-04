@@ -4,11 +4,11 @@ import AddSign from 'material-ui/svg-icons/content/add';
 import '../App.css';
 
 
-const CreateTask = () => (
-  		<IconButton className="task-button"
+const CreateTask = (props) => (
+  		<IconButton className="task-button col-sm-1"
 		    tooltip="Add New Task"	    tooltipPosition="top-center"
-		    onChange={(e) => {e.preventDefault();
-		    this.props.task(e.target.value); }}  >
+		    onClick={(e) => {e.preventDefault();
+		    props.createTask(props.story_id, props.default_status); }}  >
 	  		<AddSign />
     	</IconButton>
 

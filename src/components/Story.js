@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import StoryCol1 from './StoryCol1';
-import StoryToDo from './StoryToDo';
-import StoryInProgress from './StoryInProgress';
-import StoryDone from './StoryDone';
+import StoryColumnsContainer from '../containers/StoryColumnsContainer';
 import AccCriteriaContainer from '../containers/AccCriteriaContainer';
 import StoryActions from './StoryActions';
 import StoryTitleContainer from '../containers/StoryTitleContainer';
+import CreateTaskContainer from '../containers/CreateTaskContainer';
 
 // set state here for story status
 
@@ -24,10 +23,13 @@ class Story extends Component {
           <div className="col-md-12 story-content">
             <StoryCol1 status={this.props.status} points={this.props.points} 
                       id={this.props.id} />
-            <StoryToDo />
-            <StoryInProgress />
-            <StoryDone />
-            <AccCriteriaContainer className="AcceptanceCriteria"/>
+
+            <CreateTaskContainer story_id={this.props.id} />
+
+            <StoryColumnsContainer tasks={this.props.tasks} />
+
+            <AccCriteriaContainer className="AcceptanceCriteria"
+                acceptanceCriteria={this.props.ac} id={this.props.id}/>
           </div>
         </div>
         <hr />
