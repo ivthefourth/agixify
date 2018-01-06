@@ -4,9 +4,9 @@ import '../App.css';
 class FreeForm extends Component {
 	render() {
 	return(
-	  <div className="TextField">
+	  <div >
 	  	 {this.props.freeTextAreas.map((newTextAreas, index) => {
-	  	 	return <textarea key={index}
+	  	 	return <textarea key={index}   className="TextField"
 	    		value={newTextAreas}
 	    		onChange={(e) => {
 		  	 		e.preventDefault(); 

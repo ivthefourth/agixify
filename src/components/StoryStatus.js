@@ -27,20 +27,12 @@ class StoryStatus extends Component {
     this.setState({ open: false });
    };
 
-   completedClicked = (event) => {
-   		event.preventDefault();
-   		this.props.updateCol("Completed", this.props.id);
-   };
 
-   jeopardyClicked = (event) => {
-   		event.preventDefault();
-   		this.props.updateCol("In Jeopardy", this.props.id);
-   };
+	statusClicked = (event) => {
 
-   failedClicked = (event) => {
-   		event.preventDefault();
-   		this.props.updateCol("Failed", this.props.id);
-   };
+		this.props.updateCol(event, this.props.id);
+
+	};
 
 	render() {
 		return(
@@ -56,9 +48,10 @@ class StoryStatus extends Component {
 			      	onRequestClose={this.handleClose} >
 
 			    <Menu className="story-status-menu"/>
-			      	<MenuItem primaryText="Completed" onClick={this.completedClicked}  />
-			      	<MenuItem primaryText="In Jeopardy" onClick={this.jeopardyClicked} />
-			      	<MenuItem primaryText="Failed" onClick={this.failedClicked} />
+			    	<MenuItem primaryText="Reset" onClick={ () => this.statusClicked(null)}  />
+			      	<MenuItem primaryText="Completed" onClick={ () => this.statusClicked("Completed")}  />
+			      	<MenuItem primaryText="In Jeopardy" onClick={ () => this.statusClicked("In Jeopardy")} />
+			      	<MenuItem primaryText="Failed" onClick={ () => this.statusClicked("Failed")} />
 			    </Popover>
 		     </div>
  		)

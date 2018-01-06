@@ -32,7 +32,6 @@ class Story extends Component {
                 acceptanceCriteria={this.props.ac} id={this.props.id}/>
           </div>
         </div>
-        <hr />
       {/* end of story columns */}
     </div>
     )

@@ -15,21 +15,12 @@ class BoardTitle extends Component {
 
     return (
       <div className="BoardTitle">
+          <div className="titleText" style={divStyle}> 
+              <input type="text" value={this.props.title} 
+                onChange={(e) => {e.preventDefault(); 
+                this.props.modifyText(e.target.value); }}  />
+          </div>
 
-          <div className="cursor: pointer">
-            <div className="container-for-span">
-              <div style={divStyle}>
-                <span className="titleText" > 
-                    <input type="text" value={this.props.title} 
-                      onChange={(e) => {e.preventDefault(); 
-                      this.props.modifyText(e.target.value); }}  />
-                </span>
-
-              </div>
-
-            </div>
-
-          </div> {/*cursor:pointer*/}
 
        </div> 
 

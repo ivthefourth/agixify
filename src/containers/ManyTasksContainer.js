@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import ManyTasks from '../components/ManyTasks';
 
 const ManyTasksContainer = connect(
-  (state) => ({freeTextAreas: state.board.freeTextAreas}),
+  (state) => ({}),
   (dispatch) => ({
-    modifyFreeText: freeTextAreas => dispatch(modifyFreeText(freeTextAreas))
+    modifyTaskText: (tasks, id) => dispatch(modifyTaskText(tasks, id))
   })
-)(ManyFreeForms);
+)(ManyTasks);
 
-function modifyFreeText(newTextAreas, index) {
-  return {type: 'EDIT_BOARD_FREE_TEXT', freeTextAreas: newTextAreas[index] };
+function modifyTaskText(newText, id) {
+  return {type: 'EDIT_TASK_TEXT', newText: newText, id: id };
 }
 
 export default ManyTasksContainer;

@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
-import {Card, CardText} from 'material-ui/Card';
-import TaskAction from './TaskAction';
-import '../App.css';
+import Textarea from "react-textarea-autosize";
+
+let textStyle = {
+  float: "left",
+  resize: "none",
+  fontSize: "14px",
+  minRows: "10",
+  width: "100%",
+  outline: "none",
+};
 
 class Task extends Component {
 
   render() {
     return (
-      <Card >
-	    	
-		<CardText className="task-text" contentEditable="true" 
-			value={this.props.text_field}
-	      	input="Task"  onChange={(e) => {e.preventDefault(); 
-		    this.props.modifyTask(e.target.value); }}/>
+	    	<div className="TaskComponent">
+      		<Textarea className="task-text" style={textStyle}  minRows={3}
+      			  value={this.props.text} key={this.props.id}
+      	      input="Task"  onChange={(e) => {e.preventDefault(); 
+      		    this.props.modifyTaskText(e.target.value, this.props.id); }}/>
 
 
-
-       </Card> 
-
+        </div>
     );
   }
 }

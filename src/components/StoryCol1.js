@@ -11,6 +11,13 @@ let firstColStyle = {
 }
 
 
+let imageStyle = {
+  height: "60px",
+  width: "80px",
+  marginTop: "5%",
+  border: "0px solid",
+}
+
 class StoryCol1 extends Component { 
 	render() {
 
@@ -28,8 +35,8 @@ class StoryCol1 extends Component {
 
 		return(
   <div className="StoryCol1 col-sm-1" style={firstColStyle}>
-      <StoryPointsContainer points={this.props.points} />
-      <img src={flag} alt=""/>
+      <StoryPointsContainer points={this.props.points} id={this.props.id}/>
+      <img src={flag} alt="" style={imageStyle} />
   </div>
   )}
 };
