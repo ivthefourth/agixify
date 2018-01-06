@@ -14,12 +14,12 @@ const styles = {
 	}
 }
 
-const CreateStory = () => (
+const CreateStory = (props) => (
 		<IconButton className="story-button"
 			style={styles.large}  iconStyle={styles.largeIcon}
 		    tooltip="Add New Story"	    tooltipPosition="top-right"
-		    onChange={(e) => {e.preventDefault();
-		    this.props.addStory(this.props.id); }}  >
+		    onClick={(e) => {e.preventDefault();
+		    props.addStory();  }}  >
       		<AddCircle />
 	    </IconButton>
 

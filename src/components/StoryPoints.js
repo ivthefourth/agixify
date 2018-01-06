@@ -10,16 +10,16 @@ let pointsBox = {
 class StoryPoints extends Component {
 
 	render() {
-		console.log("points is", this.props.points);
 
-	return(
-	  <div className="StoryPoints">
-	    <input    value={this.props.points}  	style={pointsBox}
-	    	onChange={(e) => {e.preventDefault(); 
-	    	this.props.pointsEdited(e.target.value); }} />
-	  </div>
+		return(
+		  <div className="StoryPoints">
+		    <input value={this.props.points}
+		      	key={this.props.id}   style={pointsBox}
+		    	onChange={(e) => {e.preventDefault(); 
+		    	this.props.editPoints(e.target.value, this.props.id); }} />
+		  </div>
 
-	  );
+		);
 	}
 };
 

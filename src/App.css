@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color: rgb(0, 180, 240);
+}
+
+.logo {
+  width: 25%;
+  height: 25%;
 }
 
 .BoardTitle {
@@ -9,7 +15,7 @@
   padding: 0px 24px; 
   display: flex; 
   justify-content: space-between;
-  border-color: rgb(0, 0, 0);
+  /*border-color: rgb(0, 0, 0);*/
 }
 
 .titleText {
@@ -27,10 +33,9 @@
   border-color: rgb(0, 0, 0);
 }
 
-textarea {
+.TextField {
   float: left;
   resize: none;
-  border-width: 2%;    
   height: 200px;
   width: 32.55%;
 }
@@ -57,12 +62,6 @@ textarea {
   align-content: center;
 }
 
-hr {
-  background-color: #00f;
-  height: 2px;
-  
-}
-
 .StoryActions {
   width: 100%;
   float: left;
@@ -77,3 +76,19 @@ hr {
 .story-text {
   text-align: center;
 }
+
+.task {
+  width: 90px;
+  height: 90px;
+  float: left;
+}
+
+.task-text {
+  border-width: 1px;
+
+}
+
+.TaskColumn {
+  font-size: 20px;
+}
+
