@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
+import Menu, { MenuItem } from 'material-ui/Menu';
 import FlatButton from 'material-ui/FlatButton';
-import '../App.css';
 
 
 const taskMenu = {
-	fontSize: '9px',
-	textAlight: 'right',
+	fontSize: '12px',
 	margin: '0px',
-	padding: '0px',
+	padding: '0px 0px',
 	border: '0px',
-	borderWidth: '1px',
 }
 
 class TaskAction extends Component {
@@ -22,7 +19,7 @@ class TaskAction extends Component {
 		}
 }
 
- handleClick = (event) => {
+  handleClick = (event) => {
     this.setState({ 
     	open: true,
     	anchorEl: event.currentTarget 
@@ -33,39 +30,35 @@ class TaskAction extends Component {
     this.setState({ open: false });
    };
 
-   toDoClicked = (event) => {
-   		event.preventDefault();
-   		this.props.updateCol("To Do", this.props.id);
-   };
+   statusChanged = (status) => {
+      this.props.updateCol(status, this.props.id);
 
-   inProgressClicked = (event) => {
-   		event.preventDefault();
-   		this.props.updateCol("In Progress", this.props.id);
-   };
+   }
 
-   doneClicked = (event) => {
-   		event.preventDefault();
-   		this.props.updateCol("Done", this.props.id);
-   };
 
+   deleteTask = () => {
+      this.props.deleteTask(this.props.id);
+   }
 
   render() {
     return (
     	<div>
-			<FlatButton label="Move Task..."
+			<FlatButton label="Task Actions..."
 			    className="TaskActions" onClick={this.handleClick} /> 
 
 				<Popover 
-		        	open={this.state.open }
-		        	anchorEl={this.state.anchorEl}
-		          	anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-			      	targetOrigin={{horizontal: 'left', vertical: 'top'}}
-			      	onRequestClose={this.handleClose} >
+        	open={this.state.open }
+        	anchorEl={this.state.anchorEl}
+          anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+	      	targetOrigin={{horizontal: 'left', vertical: 'top'}}
+	      	onRequestClose={this.handleClose} >
 
-				      	<Menu.MenuItem primaryText="To Do" style={taskMenu} onClick={this.toDoClicked}  />
-				      	<Menu.MenuItem primaryText="In Progress"  style={taskMenu} onClick={this.inProgressClicked} />
-				      	<Menu.MenuItem primaryText="Done"  style={taskMenu} onClick={this.doneClicked} />
-		    	</Popover>
+          <Menu />
+		      	<MenuItem primaryText="To Do" style={taskMenu} onClick={ () => this.statusChanged("To Do")}  />
+		      	<MenuItem primaryText="In Progress"  style={taskMenu} onClick={ () => this.statusChanged("In Progress")} />
+		      	<MenuItem primaryText="Done"  style={taskMenu} onClick={ () => this.statusChanged("Done")} />
+            <MenuItem primaryText="Delete"  style={taskMenu} onClick={this.deleteTask} />
+		    </Popover>
 		</div>
     );
   }

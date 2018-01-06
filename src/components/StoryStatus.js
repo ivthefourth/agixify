@@ -28,9 +28,9 @@ class StoryStatus extends Component {
    };
 
 
-	statusClicked = (event) => {
+	statusClicked = (status) => {
 
-		this.props.updateCol(event, this.props.id);
+		this.props.updateCol(status, this.props.id);
 
 	};
 

@@ -21,7 +21,6 @@ class BoardTitle extends Component {
                 this.props.modifyText(e.target.value); }}  />
           </div>
 
-
        </div> 
 
     );

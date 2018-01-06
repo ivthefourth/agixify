@@ -6,8 +6,6 @@ import StoryActions from './StoryActions';
 import StoryTitleContainer from '../containers/StoryTitleContainer';
 import CreateTaskContainer from '../containers/CreateTaskContainer';
 
-// set state here for story status
-
 
 class Story extends Component {
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Textarea from "react-textarea-autosize";
+import TaskActionContainer from '../containers/TaskActionContainer'
 
 let textStyle = {
   float: "left",
@@ -16,10 +17,11 @@ class Task extends Component {
     return (
 	    	<div className="TaskComponent">
       		<Textarea className="task-text" style={textStyle}  minRows={3}
-      			  value={this.props.text} key={this.props.id}
+      			  value={this.props.text} key={this.props.id}   id={this.props.id}
       	      input="Task"  onChange={(e) => {e.preventDefault(); 
       		    this.props.modifyTaskText(e.target.value, this.props.id); }}/>
 
+          <TaskActionContainer  id={this.props.id}/>
 
         </div>
     );
