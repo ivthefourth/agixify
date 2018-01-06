@@ -16,7 +16,7 @@ const store = createStore(
 );
 
 
-const INIT_STATE = 'INIT_STATE';
+const {INIT_STATE} = require('../src/data/actionTypes');
 
 io.on('connection', function(socket){
    socket.emit('message', {type: INIT_STATE, state: store.getState()})
