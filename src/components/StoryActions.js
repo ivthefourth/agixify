@@ -11,8 +11,8 @@ class StoryActions extends Component {
 			<div className="StoryActions">
 				<StoryStatusContainer id={this.props.id} number={this.props.number}  />
 				<StoryMoveUpContainer id={this.props.id}   number={this.props.number} />
-				<StoryMoveDownContainer id={this.props.id}  number={this.props.number} />
-				<StoryDeleteContainer id={this.props.id}  number={this.props.number} />
+				<StoryMoveDownContainer id={this.props.id}  isLastStory={this.props.isLastStory} />
+				<StoryDeleteContainer id={this.props.id}  />
 			</div>
 		)
 	}

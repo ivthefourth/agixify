@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import FlatButton from 'material-ui/FlatButton';
 import '../App.css';
 
-	let disabled;
 
 class MoveStoryUp extends Component {
 
 	change(number) {
+	
+	let disabled;
+
+		console.log(number);
 		if (number === 1) {
 			disabled = true;
 		} else {
 			disabled = false;
 		}
+		return(disabled);
 	}
 
 	render() {

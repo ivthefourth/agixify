@@ -3,9 +3,13 @@
   background-color: rgb(0, 180, 240);
 }
 
+.logoContainer {
+  background: linear-gradient(to right, white 50%, #00b4f0 50.001%);
+}
+
 .logo {
-  width: 25%;
-  height: 25%;
+  width: 15%;
+  height: 15%;
 }
 
 .BoardTitle {

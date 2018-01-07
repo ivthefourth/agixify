@@ -13,7 +13,8 @@ class Story extends Component {
      <div className="storyMain">
         <div className="story-heading">
           <StoryTitleContainer  title={this.props.story_title} id={this.props.id} />
-          <StoryActions id={this.props.id}  number={this.props.number}  />
+          <StoryActions id={this.props.id}  number={this.props.number}  
+              isLastStory={this.props.isLastStory}/>
         </div>
 
       {/* beginnging of story columns*/}

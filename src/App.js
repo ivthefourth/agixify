@@ -8,11 +8,15 @@ import StoriesContainer from './containers/StoriesContainer';
 import agixifylogo from './images/agixifylogo.png';
 
 
+// let logoContainer = {
+//     backgroundColor:"linear-gradient(to right, white 50%, #00b4f0 50.001%)",
+// }
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div> <img src={agixifylogo}  className="logo"  alt="" /> </div>
+      <div className="App" >
+        <div className="logoContainer"> <img src={agixifylogo}  className="logo"  alt="" /> </div>
         <BoardContainer />
         <div className="free-form-fields">
           <FreeFormContainer  /> 
