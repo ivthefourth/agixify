@@ -9,10 +9,10 @@ class StoryActions extends Component {
 	render() {
 		return(
 			<div className="StoryActions">
-				<StoryStatusContainer id={this.props.id} />
-				<StoryMoveUpContainer id={this.props.id}  />
-				<StoryMoveDownContainer id={this.props.id} />
-				<StoryDeleteContainer id={this.props.id} />
+				<StoryStatusContainer id={this.props.id} number={this.props.number}  />
+				<StoryMoveUpContainer id={this.props.id}   number={this.props.number} />
+				<StoryMoveDownContainer id={this.props.id}  number={this.props.number} />
+				<StoryDeleteContainer id={this.props.id}  number={this.props.number} />
 			</div>
 		)
 	}

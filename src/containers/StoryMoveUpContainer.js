@@ -4,12 +4,12 @@ import StoryMoveUp from '../components/StoryMoveUp';
 const StoryMoveUpContainer = connect(
   (state) => ({}),
   (dispatch) => ({
-    moveStoryUp: id => dispatch(moveStoryUp(id))
+    moveStoryUp: (id, number) => dispatch(moveStoryUp(id, number))
   })
 )(StoryMoveUp);
 
-function moveStoryUp(id) {
-  return {type: 'MOVE_STORY_UP', id: id };
+function moveStoryUp(id, number) {
+  return {type: 'MOVE_STORY_UP', id: id, number: number };
 }
 
 export default StoryMoveUpContainer;

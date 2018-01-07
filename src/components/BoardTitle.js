@@ -15,8 +15,9 @@ class BoardTitle extends Component {
 
     return (
       <div className="BoardTitle">
-          <div className="titleText" style={divStyle}> 
+          <div > 
               <input type="text" value={this.props.title} 
+                className="titleText" style={divStyle}
                 onChange={(e) => {e.preventDefault(); 
                 this.props.modifyText(e.target.value); }}  />
           </div>

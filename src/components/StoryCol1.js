@@ -7,7 +7,6 @@ import '../App.css';
 
 let firstColStyle = {
 	borderRight: "5px",
-	borderColor: "blue"
 }
 
 
@@ -15,7 +14,7 @@ let imageStyle = {
   height: "60px",
   width: "80px",
   marginTop: "5%",
-  border: "0px solid",
+  border: "solid 0px transparent",
 }
 
 class StoryCol1 extends Component { 

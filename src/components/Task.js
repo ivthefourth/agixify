@@ -11,11 +11,16 @@ let textStyle = {
   outline: "none",
 };
 
+let taskStyle = {
+  border: "1px solid",
+  backgroundColor: "rgb(0,170,255)",
+}
+
 class Task extends Component {
 
   render() {
     return (
-	    	<div className="TaskComponent">
+	    	<div className="TaskComponent" style={taskStyle}>
       		<Textarea className="task-text" style={textStyle}  minRows={3}
       			  value={this.props.text} key={this.props.id}   id={this.props.id}
       	      input="Task"  onChange={(e) => {e.preventDefault(); 

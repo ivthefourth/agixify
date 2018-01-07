@@ -10,12 +10,11 @@
 
 .BoardTitle {
   border: 0px; 
-  background-color: rgb(232, 232, 232); 
+  background-color: white; 
   height: 56px; 
   padding: 0px 24px; 
   display: flex; 
   justify-content: space-between;
-  /*border-color: rgb(0, 0, 0);*/
 }
 
 .titleText {
@@ -23,21 +22,23 @@
   padding-right: 16px; 
   line-height: 52px; 
   font-size: 20px; 
-  font-family: Roboto, sans-serif; 
   position: relative; 
   text-overflow: ellipsis; 
   white-space: nowrap; 
   overflow: hidden; 
   display: flex; 
-  background-color: rgb(232, 232, 232);
   border-color: rgb(0, 0, 0);
+  width: 100%;
+  outline: none;
 }
 
 .TextField {
   float: left;
   resize: none;
   height: 200px;
-  width: 32.55%;
+  width: 33.33%;
+  border-right: none;
+  outline: none;
 }
 
 .free-form-fields {
