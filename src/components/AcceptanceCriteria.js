@@ -8,8 +8,10 @@ const ac_style = {
   resize: 'none',
   wrap: 'off',
   outline: 'none',
-  marginTop: "5%",
-  marginBottom: "2%",
+  marginTop: '5%',
+  marginBottom: '2%',
+  overflow: 'hidden',
+  borderColor: 'rgb(0,180,240)',
 }
 
 class AcceptanceCriteria extends Component {

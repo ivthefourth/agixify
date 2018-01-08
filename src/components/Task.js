@@ -13,7 +13,7 @@ let textStyle = {
 
 let taskStyle = {
   border: "1px solid",
-  backgroundColor: "rgb(0,170,255)",
+  margin: "0.5rem 0",
 }
 
 class Task extends Component {

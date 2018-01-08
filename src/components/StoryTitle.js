@@ -5,6 +5,8 @@ let inputStyle = {
   textAlign: 'center',
   border: '0px',
   width: '100%',
+  backgroundColor: 'rgb(0,180,240)',
+  color: 'white',
 };
 
 let spanStyle = {
@@ -20,7 +22,7 @@ class StoryTitle extends Component {
   render() {
 
     return (
-      <div className="StoryTitle">
+      <div className="StoryTitle"  style={{marginTop: "1rem"}} >
 
           <div className="cursor: pointer">
             <div className="container-for-span">

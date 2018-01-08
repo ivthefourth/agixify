@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(0, 180, 240);
+  /*background-color: rgb(0, 180, 240);*/
 }
 
 .logoContainer {
@@ -14,9 +14,7 @@
 
 .BoardTitle {
   border: 0px; 
-  background-color: white; 
   height: 56px; 
-  padding: 0px 24px; 
   display: flex; 
   justify-content: space-between;
 }
@@ -43,6 +41,7 @@
   width: 33.33%;
   border-right: none;
   outline: none;
+  border-color: rgb(0, 180, 240);
 }
 
 .free-form-fields {
@@ -73,6 +72,12 @@
   padding-left: 35%;
 }
 
+.story-heading {
+  margin-bottom: 1rem;
+  overflow:  hidden;
+  border-bottom: 1px solid #0ab3f2;
+}
+
 .story-button {
   margin: 0px;
   border: 0px;
@@ -97,3 +102,7 @@
   font-size: 20px;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}

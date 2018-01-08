@@ -5,7 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 
 const taskMenu = {
-	fontSize: '12px',
+	fontSize: '14px',
 	margin: '0px',
 	padding: '0px 0px',
 	border: '0px',
@@ -42,8 +42,8 @@ class TaskAction extends Component {
 
   render() {
     return (
-    	<div>
-			<FlatButton label="Task Actions..."
+    	<div style={{backgroundColor: "rgb(0,180,240)"}} >
+			<FlatButton label="Task Actions..."   style={{color: 'white'}}
 			    className="TaskActions" onClick={this.handleClick} /> 
 
 				<Popover 

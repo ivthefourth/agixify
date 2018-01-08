@@ -7,6 +7,7 @@ const styles = {
 	largeIcon: {
 		width: 50,
 		height: 50,
+		color: 'orangered',
 	},
 	large: {
 		width: 110,

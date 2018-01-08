@@ -4,7 +4,6 @@ import StoryColumnsContainer from '../containers/StoryColumnsContainer';
 import AccCriteriaContainer from '../containers/AccCriteriaContainer';
 import StoryActions from './StoryActions';
 import StoryTitleContainer from '../containers/StoryTitleContainer';
-import CreateTaskContainer from '../containers/CreateTaskContainer';
 
 
 class Story extends Component {
@@ -21,9 +20,7 @@ class Story extends Component {
         <div className="container-fluid">
           <div className="col-md-12 story-content">
             <StoryCol1 status={this.props.status} points={this.props.points} 
-                      id={this.props.id} />
-
-            <CreateTaskContainer story_id={this.props.id} />
+                      number={this.props.number}  id={this.props.id} />
 
             <StoryColumnsContainer tasks={this.props.tasks} />
 

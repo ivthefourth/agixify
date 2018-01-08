@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import StoryPointsContainer from '../containers/StoryPointsContainer';
+import StoryNumber from './StoryNumber'
+import CreateTaskContainer from '../containers/CreateTaskContainer';
 import checkered_flag from '../images/checkered-flag.jpg';
 import yellow_flag from '../images/yellow-flag.jpg'
 import red_flag from '../images/red-flag.jpg';
 import '../App.css';
 
 let firstColStyle = {
-	borderRight: "5px",
+  textAlign: "center",
 }
 
 
@@ -15,6 +17,7 @@ let imageStyle = {
   width: "80px",
   marginTop: "5%",
   border: "solid 0px transparent",
+  marginTop: '1rem',
 }
 
 class StoryCol1 extends Component { 
@@ -34,8 +37,11 @@ class StoryCol1 extends Component {
 
 		return(
   <div className="StoryCol1 col-sm-1" style={firstColStyle}>
+      <StoryNumber number={this.props.number}  />
+
+            <CreateTaskContainer story_id={this.props.id} />
       <StoryPointsContainer points={this.props.points} id={this.props.id}/>
-      <img src={flag} alt="" style={imageStyle} />
+      {flag ? <img src={flag} alt="" style={imageStyle} />: null}
   </div>
   )}
 };
