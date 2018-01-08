@@ -6,10 +6,4 @@ const StoryColumnsContainer = connect(
   (dispatch) => ({})
 )(StoryColumns);
 
-// function updateCol(newStatus, id) {
-//   return {type: 'CHANGE_STORY_STATUS', 
-//   			newStatus: newStatus,
-//   			id: id };
-// }
-
 export default StoryColumnsContainer;

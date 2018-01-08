@@ -9,7 +9,7 @@ const styles = {
 }
 
 const CreateTask = (props) => (
-  		<IconButton className="task-button col-sm-1"   
+  		<IconButton className="task-button"   
   			iconStyle={styles.largeIcon}   style={{textAlign: 'center', width: '100%'}}
 		    tooltip="Add New Task"	    tooltipPosition="top-right"
 		    onClick={(e) => {e.preventDefault();
