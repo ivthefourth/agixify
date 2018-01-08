@@ -1,7 +1,6 @@
 import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
-import '../App.css';
 
 const styles = {
 	largeIcon: {
@@ -21,6 +20,7 @@ const CreateStory = (props) => (
 		    tooltip="Add New Story"	    tooltipPosition="top-right"
 		    onClick={(e) => {e.preventDefault();
 		    props.addStory();  }}  >
+
       		<AddCircle />
 	    </IconButton>
 
