@@ -18,7 +18,7 @@ class Story extends Component {
 
       {/* beginnging of story columns*/}
         <div className="container-fluid">
-          <div className="col-md-12 story-content">
+          <div className="story-content">
             <StoryCol1 status={this.props.status} points={this.props.points} 
                       number={this.props.number}  id={this.props.id} />
 

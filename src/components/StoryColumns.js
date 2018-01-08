@@ -5,7 +5,7 @@ import '../App.css';
 class StoryToDoCol extends Component {
   render() {
     return (
-      <div className="TaskStatusColumns" value={this.props.columns}>
+      <div className="TaskStatusColumns col-sm-7" value={this.props.columns}>
       	
       	{this.props.columns.map((column_name) => <ManyTasks key={column_name}
   			column_name={column_name}  

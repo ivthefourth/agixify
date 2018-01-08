@@ -11,7 +11,7 @@ const styles = {
 const CreateTask = (props) => (
   		<IconButton className="task-button col-sm-1"   
   			iconStyle={styles.largeIcon}   style={{textAlign: 'center', width: '100%'}}
-		    tooltip="Add New Task"	    tooltipPosition="top-center"
+		    tooltip="Add New Task"	    tooltipPosition="top-right"
 		    onClick={(e) => {e.preventDefault();
 		    props.createTask(props.story_id, props.default_status); }}  >
 	  		<AddSign />

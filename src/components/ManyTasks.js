@@ -3,7 +3,7 @@ import TaskContainer from '../containers/TaskContainer';
 
 class ManyTasks extends Component {
 	render() {
-		return(<div className="TaskColumn col-sm-2 flex-box" >
+		return(<div className="TaskColumn col-sm-4 flex-box" >
 
 			 {this.props.column_name}
 			 {this.props.tasks.map((task_object) => <TaskContainer key={task_object.id}

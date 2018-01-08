@@ -8,8 +8,7 @@
 }
 
 .logo {
-  width: 15%;
-  height: 15%;
+  height: 100%;
 }
 
 .BoardTitle {
@@ -17,6 +16,17 @@
   height: 56px; 
   display: flex; 
   justify-content: space-between;
+}
+
+.logo-and-logout{
+  overflow: hidden;
+  text-align: left;
+  width: 300px;
+  background-color: rgb(0, 180, 240);
+}
+.logo-and-logout a{
+  padding-left: 3rem;
+  color: white;
 }
 
 .titleText {
@@ -54,6 +64,10 @@
   flex-wrap: nowrap;
   border-width: 5px;
   border-color: blue;
+}
+
+.storyMain:not(:first-child) {
+  margin-top: 3rem;
 }
 
 .StoryTitle {
